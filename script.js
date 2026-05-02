@@ -1,4 +1,3 @@
-//your JS code here. If required.
 const codes = document.querySelectorAll(".code");
 
 codes[0].focus();
@@ -11,10 +10,9 @@ codes.forEach((code, index) => {
 	});
 
 	code.addEventListener("keydown", (e) => {
-		if (e.key === "Backspace") {
-			if (code.value === "" && index > 0) {
-				codes[index - 1].focus();
-			}
+		if (e.key === "Backspace" && index > 0) {
+			code.value = "";
+			codes[index - 1].focus();
 		}
 	});
 });
